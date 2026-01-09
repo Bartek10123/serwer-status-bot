@@ -22,6 +22,10 @@ const commands = [
                 }))
             }
         ],
+    },
+    {
+        name: 'hi',
+        description: 'Say hi back',
     }
 ];
 
@@ -40,4 +44,5 @@ const rest = new REST({ version: '10' }).setToken(config.bot.token);
     } catch (error) {
         console.error(error);
     }
+
 })(); 
