@@ -466,3 +466,16 @@ app.listen(PORT, () => {
 
 client.login(process.env.DISCORD_TOKEN); 
 
+client.on('interactionCreate', async interaction => {
+  if (!interaction.isCommand()) return;
+
+  if (interaction.commandName === 'hi') {
+    await interaction.reply('hi');
+  }
+
+  if (interaction.commandName === 'status') {
+    const serverName = interaction.options.getString('server');
+    await interaction.reply(`Sprawdzam status serwera: ${serverName}`);
+  }
+});
+
